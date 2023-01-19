@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(243, 246, 248);
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+  margin: 0 0 50px 0;
+}
+h1{
+  font-size: 25px;
+}
+.container{
+  width: 32%;
+  margin: auto;
+}
+.img{  
+  text-align: center;
+}
+.img img{
+  width: 290px;
+}
+.cont{
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 12px #ccc;
+}
+.cHead{
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  line-height: 32px;
+}
+.cHead p{
+  font-size: 15px;
+}
+.cMain{
+  padding: 20px;
+}
+input,select{
+  margin: 0 0 12px;
+  width:390px;
+  height: 44px;
+  padding: 11px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.inp input{
+  width: 189px;
+}
+.inp input:first-of-type{
+  margin: 0 8px 8px 0;
+}
+.select{
+  margin: 0 0 10px;
+  display: flex;
+  gap: 12px;
+}
+select{
+  width: 33.33%;
+}
+.gender{
+  display: flex;
+  gap: 12px;
+  margin: 0 0 12px;
+}
+.gender div{
+  width: 121px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  padding: 11px;
+}
+.gender input{
+  width: 12px;
+  height: 44px;
+  position: absolute;
+  right: 11px;
+  bottom: 0;
+  top: -2px;
+}
+span{
+  font-size: 12px;
+}
+span:hover{
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+p{
+  font-size: 11px;
+  margin: 0 0 6px;
+}
+.btn{
+  text-align: center;
+}
+button{
+  margin: 20px 0 0;
+  padding: 8px 64px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 0px;
+  background-color: #00a400;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: #0ea8e7;
+}
