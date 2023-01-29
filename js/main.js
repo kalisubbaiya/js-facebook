@@ -1,102 +1,97 @@
-// Dom elements
-let form = document.querySelector("form");
-let userName = document.querySelector("#username");
-let email = document.querySelector("#email");
-let password = document.querySelector("#password");
-let confirmPassword = document.querySelector("#cpassword");
-let mobileNumber= document.querySelector("#cPhone");
-let address= document.querySelector("#cAddress");
-let course= document.querySelector("#cCourse");
+let cust=document.getElementById("cust");
+let fem=document.getElementById("fem");
+let mal=document.getElementById("mal");
 
-// Event listener to submit form
-form.addEventListener("submit", (e) => {
+cust.addEventListener("click",function(){
+  let custom=document.querySelector(".custom");
+  custom.style.display="block";
+});
+mal.addEventListener("click",function(){
+  let custom=document.querySelector(".custom");
+  custom.style.display="none";
+});
+fem.addEventListener("click",function(){
+  let custom=document.querySelector(".custom");
+  custom.style.display="none";
+});
+
+let form = document.querySelector("form");
+let fName= document.getElementById("fName");
+let sName= document.getElementById("sName");
+let mobile= document.getElementById("mobile");
+let password= document.getElementById("password");
+let date= document.getElementById("date");
+let month= document.getElementById("month");
+let year= document.getElementById("year");
+let female= document.getElementById("female");
+let male= document.getElementById("male");
+let custom= document.getElementById("custom");
+let ico= document.querySelector(".bi-exclamation-circle-fill");
+
+let err1= document.querySelector(".err1");
+let err2= document.querySelector(".err2");
+let err3= document.querySelector(".err3");
+let err4= document.querySelector(".err4");
+let err5= document.querySelector(".err5");
+let err6= document.querySelector(".err6");
+
+
+form.addEventListener("submit", (e)=>{
   e.preventDefault();
   handleInput();
 });
 
-// What to do with inputs ?
-function handleInput() {
-  // Values from dom elements ( input )
-  let userNameValue = userName.value.trim();
-  let emailValue = email.value.trim();
-  let passwordValue = password.value.trim();
-  let confirmPasswordValue = confirmPassword.value.trim();
-  let mobileNumberValue= mobileNumber.value.trim();
-  let addressValue= address.value.trim();
-  let courseValue= course.value;
+function handleInput(){
+  let fNameValue= fName.value.trim();
+  let sNameValue= sName.value.trim();
+  let mobileValue= mobile.value.trim();
+  let passwordValue= password.value.trim();
 
-  //  Checking for username
-  if (userNameValue === "") {
-    setErrorFor(userName, "Username cannot be blank");
+  if (fNameValue === "") {
+    setErrorFor(fName);
+    err1.style.display="block";  
   } else {
-    setSuccessFor(userName);
+    setSuccessFor(fName);
   }
 
-  //  Checking for course
-  if (courseValue === "") {
-    setErrorFor(course, "Course cannot be blank");
+  if (sNameValue === "") {
+    setErrorFor(sName);
+    err2.style.display="block";  
   } else {
-    setSuccessFor(course);
+    setSuccessFor(sName);
   }
 
-  // Checking for email
-  if (emailValue === "") {
-    setErrorFor(email, "Email cannot be blank");
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "Email is not valid");
+  if (mobileValue === "") {
+    setErrorFor(mobile);
+    err3.style.display="block";  
   } else {
-    setSuccessFor(email);
+    setSuccessFor(mobile);
   }
 
-  // Checking for password
   if (passwordValue === "") {
-    setErrorFor(password, "Password cannot be blank");
-  } else if (passwordValue.length < 6 || passwordValue.length > 30) {
-    setErrorFor(password, "Password length should be between 6 and 30");
+    setErrorFor(password);
+    err4.style.display="block";  
   } else {
     setSuccessFor(password);
   }
 
-  // Checking for confirm password
-  if (confirmPasswordValue === "") {
-    setErrorFor(confirmPassword, "Confirm Password cannot be blank");
-  } else if (confirmPasswordValue !== passwordValue) {
-    setErrorFor(confirmPassword, "Confirm password not matched with password");
-  } else {
-    setSuccessFor(confirmPassword);
-  }
-
-  // Checking for Mobile Number
-  if (mobileNumberValue === "") {
-    setErrorFor(mobileNumber, "Mobile number cannot be blank");
-  } else {
-    setSuccessFor(mobileNumber);
-  }
-
-   // Checking for Address
-   if (addressValue === "") {
-    setErrorFor(address, "Address cannot be blank");
-  } else {
-    setSuccessFor(address);
+  if(fNameValue!="" && sNameValue!="" && mobileValue!="" && passwordValue!=""){
+    window.location.href="success.html";
   }
 }
 
-// If there is some error, than what we want to do with input ?
-function setErrorFor(input, message) {
-  let formControl = input.parentElement;
-  formControl.className = "form-control error";
-  let small = formControl.querySelector("span");
-  small.innerText = message;
+function setErrorFor(input) {
+  input.style.border="1px solid red";
 }
 
-// If there is no error, than what we want to do with input ?
 function setSuccessFor(input) {
-  let formControl = input.parentElement;
-  formControl.className = "form-control success";
+  input.style.border="1px solid #ccc";  
 }
 
-// To check if email is valid or not ?
-function isEmail(email) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
+form.addEventListener("click",function(){
+  localStorage.setItem("fbUser",fName.value);
+  localStorage.setItem("fbName",mobile.value);
+  localStorage.setItem("fbPassword",password.value);  
+});
+
+

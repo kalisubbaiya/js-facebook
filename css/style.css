@@ -45,9 +45,17 @@ input,select{
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  outline: 0;
 }
-.inp input{
-  width: 189px;
+.inp{
+  display: flex;
+  gap: 12px;
+}
+.inp div{
+  width: 50%;
+}
+.inp div input{
+  width: 100%;
 }
 .inp input:first-of-type{
   margin: 0 8px 8px 0;
@@ -66,7 +74,7 @@ select{
   margin: 0 0 12px;
 }
 .gender div{
-  width: 121px;
+  width: 33%;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
@@ -79,6 +87,12 @@ select{
   right: 11px;
   bottom: 0;
   top: -2px;
+}
+.custom{
+  display: none;
+}
+.custom select{
+  width: 100%;
 }
 span{
   font-size: 12px;
@@ -106,7 +120,29 @@ button{
   font-weight: bolder;
   cursor: pointer;
 }
+button:hover{
+  background: linear-gradient(#79bc64, #578843);
+}
 a{
   text-decoration: none;
   color: #0ea8e7;
+}
+.bi-exclamation-circle-fill{
+  display: none;
+  font-size: 18px;
+  color: brown;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.exclam,.exclam-1{
+  position: relative;
+}
+.exclam-1 .bi-exclamation-circle-fill{
+  display: none;
+  font-size: 18px;
+  color: brown;
+  position: absolute;
+  top: -5px;
+  right: 12px;
 }
